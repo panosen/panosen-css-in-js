@@ -1,0 +1,20 @@
+{
+    "compilerOptions": {
+        "esModuleInterop": true,
+        "jsx": "react",
+        "target": "esnext",
+        "moduleResolution": "node",
+        "declaration": true,
+        "outDir": "./dist",
+        "strict": true,
+        "sourceMap": true
+    },
+    "compileOnSave": true,
+    "include": [
+        "src/**/*.ts",
+        "src/**/*.tsx"
+    ],
+    "exclude": [
+        "node_modules"
+    ]
+}

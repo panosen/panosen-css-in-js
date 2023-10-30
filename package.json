@@ -1,0 +1,23 @@
+{
+  "name": "@panosen/css-in-js",
+  "version": "0.1.0",
+  "publishConfig": {
+    "access": "public"
+  },
+  "description": "panosen css in js",
+  "main": "./dist/index.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc"
+  },
+  "devDependencies": {
+    "@types/node": "^20.8.9",
+    "typescript": "^5.2.2"
+  },
+  "files": [
+    "dist"
+  ],
+  "dependencies": {
+    "@panosen/murmur-hash": "^0.1.0"
+  }
+}
