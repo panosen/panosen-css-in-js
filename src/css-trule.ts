@@ -2,6 +2,14 @@ import { murmurhash3_32_gc } from "@panosen/murmur-hash";
 
 import { CssSheet } from './css-sheet';
 
+function buildContent(rules: Map<string, string>): string {
+    let items: string[] = [];
+    rules.forEach((v, k) => {
+        items.push(k + ':' + v);
+    })
+    return '{' + items.join(';') + '}';
+}
+
 export class CssRule {
 
     private readonly sheet: CssSheet;
@@ -26,14 +34,15 @@ export class CssRule {
 
     public build(): string {
 
-        let items: string[] = [];
-        this.rules.forEach((v, k) => {
-            items.push(k + ':' + v);
-        })
-
-        let content = '{' + items.join(';') + '}';
+        let content = buildContent(this.rules);
         let name = 'pano-' + murmurhash3_32_gc(content).toString(36);
         this.sheet.insert('.' + name + content);
+
+        if (this._hover) {
+            let hoverName = '.' + name + ':hover';
+            let hoverContent = buildContent(this._hover.rules);
+            this.sheet.insert(hoverName + hoverContent);
+        }
 
         return name;
     }
