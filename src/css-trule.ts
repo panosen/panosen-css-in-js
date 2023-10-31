@@ -46,4 +46,52 @@ export class CssRule {
 
         return name;
     }
+
+    // #region style extension
+
+    public margin(margin: string): CssRule {
+        return this.addStyle('margin', margin);
+    }
+
+    public display(display: string): CssRule {
+        return this.addStyle('display', display);
+    }
+
+    public padding(padding: string): CssRule {
+        return this.addStyle('padding', padding);
+    }
+
+    public color(color: string): CssRule {
+        return this.addStyle('color', color);
+    }
+
+    public backgroundColor(backgroundColor: string): CssRule {
+        return this.addStyle('background-color', backgroundColor);
+    }
+
+    public border(border: string): CssRule {
+        return this.addStyle('border', border);
+    }
+
+    public background(background: string): CssRule {
+        return this.addStyle('background', background);
+    }
+
+    public cursor(cursor: string): CssRule {
+        return this.addStyle('cursor', cursor);
+    }
+
+    public borderStyle(borderStyle: string): CssRule {
+        return this.addStyle('border-style', borderStyle);
+    }
+
+    public borderColor(borderColor: string): CssRule {
+        return this.addStyle('border-color', borderColor);
+    }
+
+    public borderWidth(borderWidth: string): CssRule {
+        return this.addStyle('border-width', borderWidth);
+    }
+
+    // #endregion
 }
